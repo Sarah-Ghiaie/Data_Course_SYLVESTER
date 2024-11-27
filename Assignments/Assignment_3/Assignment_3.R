@@ -182,7 +182,5 @@ v6 <- as.vector(iris$Sepal.Area>20)
 big_area_iris<- data.frame(iris[v6==TRUE,1:6])
 
 
-# 6.  Upload the last numbered section of this R script (with all answers filled in and tasks completed) 
-      # to canvas
-      # I should be able to run your R script and get all the right objects generated
+
 
