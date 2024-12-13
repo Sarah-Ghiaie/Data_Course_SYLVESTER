@@ -1,4 +1,4 @@
- <- read.csv("unicef-u5mr.csv")
+ unicef_data <- read.csv("unicef-u5mr.csv")
 
 library(tidyverse)
 
@@ -80,3 +80,4 @@ grid.draw(gtable)
 
 # Bonus: Predict U5MR for Ecuador in 2020 and compare with reality
 ecuador_2020 <- data.frame(Year = 2020, Continent = "Americas")
+
