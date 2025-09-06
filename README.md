@@ -1,1 +1,1 @@
-# Data_Course_Sylvester This README file contains information about my uploaded assignments
+# Data_Course_SYLVESTER This README file contains information about my uploaded assignments
