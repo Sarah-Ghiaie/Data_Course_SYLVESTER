@@ -1,0 +1,64 @@
+
+# Task 4: List all .csv files in the Data/ directory
+csv_files <- list.files(
+  path = "Data/",
+  pattern = "\\.csv$",
+  full.names = TRUE,
+  recursive = FALSE,
+  ignore.case = TRUE
+)
+
+# Task 5: Count how many such files
+length(csv_files)
+
+# Task 6: Read wingspan_vs_mass.csv into an object named df
+df <- read.csv("Data/wingspan_vs_mass.csv")
+
+# Task 7: Inspect the first 5 lines of df
+head(df, 5)
+
+# Task 8: Find (recursively) any files in Data/ that BEGIN with lowercase 'b'
+b_files <- list.files(
+  path = "Data/",
+  pattern = "^b",
+  full.names = TRUE,
+  recursive = TRUE,
+  ignore.case = FALSE
+)
+
+# Task 9: Display the FIRST LINE of each 'b' file (using a for-loop)
+if (!length(b_files)) {
+  cat("  (No files beginning with lowercase 'b' were found.)\n\n")
+} else {
+  for (f in b_files) {
+    cat("  File:", f, "\n")
+    first_line <- try(readLines(f, n = 1, warn = FALSE), silent = TRUE)
+    if (inherits(first_line, "try-error")) {
+      cat("    [Error reading this file]\n")
+    } else if (!length(first_line)) {
+      cat("    [File appears to be empty]\n")
+    } else {
+      cat("    ", first_line, "\n")
+    }
+  }
+  cat("\n")
+}
+
+# Task 10: Do the same thing for ALL csv_files (not recursive)
+if (!length(csv_files)) {
+  cat("  (No .csv files found in the Data/ directory.)\n")
+} else {
+  for (f in csv_files) {
+    cat("  File:", f, "\n")
+    first_line <- try(readLines(f, n = 1, warn = FALSE), silent = TRUE)
+    if (inherits(first_line, "try-error")) {
+      cat("    [Error reading this file]\n")
+    } else if (!length(first_line)) {
+      cat("    [File appears to be empty]\n")
+    } else {
+      cat("    ", first_line, "\n")
+    }
+  }
+}
+
+
