@@ -1,0 +1,20 @@
+Project Title:
+Integrative Cardiovascular Disease Risk Prediction Using Clinical and Genetic Data
+
+Project Idea:
+The goal of my project is to analyze whether incorporating genetic risk scores can improve cardiovascular disease (CVD) risk prediction compared to traditional clinical factors alone. Traditional models such as the Framingham Risk Score rely on variables like blood pressure, cholesterol, and smoking status. My analysis will compare two predictive models—one using only clinical variables and another that includes an added genetic risk score—to see if genetic information increases accuracy in identifying high-risk individuals.
+
+Data Description:
+The dataset will include both clinical and genetic variables for a large group of individuals. Each row represents one participant. Clinical data will include continuous variables such as age, systolic and diastolic blood pressure, cholesterol, glucose, and categorical variables such as smoking, alcohol use, and physical activity. Genetic data will be represented as a “genetic_risk” score (integer values from 0 to 3), which approximates the number of risk alleles carried across several known CVD-associated SNPs.
+
+Potential Data Sources:
+Kaggle Cardiovascular Disease dataset
+Framingham Heart Study data (NHLBI BioLINCC)
+GWAS Catalog and 1000 Genomes Project (for allele frequency information)
+I'll simulate data for Assignment 4
+
+Example Columns:
+id, age, gender, ap_hi, ap_lo, cholesterol, gluc, smoke, alco, active, genetic_risk, cardio
+
+Expected Results:
+I expect that models including the genetic_risk variable will have a slightly higher predictive accuracy (AUC) than clinical models alone. I also anticipate that age, blood pressure, and genetic_risk will appear among the top predictors in variable-importance analyses.
