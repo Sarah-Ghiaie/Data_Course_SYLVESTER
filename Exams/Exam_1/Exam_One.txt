@@ -1,0 +1,8 @@
+1. mkdir unique_name_dir
+2. /Users/sarah/Desktop/unique_name_dir
+3. cp Data/Fastq_16S/*.fastq Exams/Exam_1/unique_name_dir/
+4. cd Exams/Exam_1/unique_name_dir/
+5. for file in *.fastq; do cp "$file" "${file}.SYLVESTER"; done
+6. wc -l F3D6_S194_L001_R1_001.fastq.SYLVESTER
+   31956 F3D6_S194_L001_R1_001.fastq.SYLVESTER
+
