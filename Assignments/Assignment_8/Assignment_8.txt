@@ -1,0 +1,24 @@
+1. Are any of your predicted response values from your best model scientifically meaningless? Explain.
+
+Yes. Using the best model: `GrowthRate ~ Light * Nitrogen + Temperature * Humidity + Species`,
+most predictions look reasonable. Still, a few predicted GrowthRate values become negative at extreme combinations of low Light and low Nitrogen. Negative growth is biologically impossible, so those values are scientifically meaningless.
+
+2. In your plots, did you find any non-linear relationships? Do a bit of research online and provide a link to at least one resource explaining how to deal with modeling non-linear relationships in R.
+
+Yes. GrowthRate vs Nitrogen (and vs Light)showed some curved patterns, suggesting non-linear relationships and interactions.
+
+“Nonlinear Regression Essentials in R: Polynomial and Spline Regression Models” (STHDA):
+[https://www.sthda.com/english/articles/40-regression-analysis/162-nonlinear-regression-essentials-in-r-polynomial-and-spline-regression-models/](https://www.sthda.com/english/articles/40-regression-analysis/162-nonlinear-regression-essentials-in-r-polynomial-and-spline-regression-models/)
+
+
+3. Write the code you would use to model the data found in “/Data/non_linear_relationship.csv” with a linear model (there are a few ways of doing this).
+
+#load data
+nonlin <- read_csv("Data/non_linear_relationship.csv")
+#simple straight-line model
+mod_simple <- lm(response ~ predictor, data = nonlin)
+#linear model with a quadratic term
+mod_quad <- lm(response ~ predictor + I(predictor^2), data = nonlin)
+#polynomial form using poly()
+mod_poly <- lm(response ~ poly(predictor, 2), data = nonlin)
+
